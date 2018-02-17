@@ -10,7 +10,8 @@ def homepage():
 
 @app.route('/submit', methods=['POST'])
 def submit():
-	return 'You entered: {}'.format(request.form['text'])
+	#return 'You entered: {}'.format(request.form['text'])
+	return "No logon available"
 
 if __name__ == '__main__':
 	app.run()
