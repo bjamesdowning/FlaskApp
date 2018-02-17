@@ -18,23 +18,18 @@
 
   <body class="text-left">
 
-    <!-- <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
       </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">Site</h1>
-        <p class="lead">Input test</p>
-        <textarea class="form-control" rows="10"></textarea>
-	<p class="lead">
-          <a href="#" class="btn btn-lg btn-secondary">Submit</a>
-        </p>
-      </main> -->
-
-      <form action="{{ url_for('submit') }}" method="post">
-          <textarea name = "text"></textarea>
+        <h1 class="cover-heading">Test Input</h1>
+        <form action="{{ url_for('submit') }}" method="post">
+          <textarea name = "text" rows = '10'><i>Input Text here</i></textarea>
           <input type = "submit">
       </form>
+      </main>
+
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
