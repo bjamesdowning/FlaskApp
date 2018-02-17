@@ -9,8 +9,8 @@ def homepage():
 	return render_template("homepage.html")
 
 @app.route('/submit', methods=['POST'])
-	def submit():
-		return 'You entered: {}'.format(request.form['text'])
+def submit():
+	return 'You entered: {}'.format(request.form['text'])
 
 if __name__ == '__main__':
 	app.run()
