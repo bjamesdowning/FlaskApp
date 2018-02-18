@@ -6,8 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-	return 'test'
-	#return render_template("homepage.html")
+	return render_template("homepage.html")
 
 @app.route('/login', methods=['POST'])
 def login():
