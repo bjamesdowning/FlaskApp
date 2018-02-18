@@ -8,8 +8,8 @@ app = Flask(__name__)
 def homepage():
 	return render_template("homepage.html")
 
-@app.route('/Login', methods=['POST'])
-def submit():
+@app.route('/login', methods=['POST'])
+def login():
 	return render_tempalte("login.html")
 
 if __name__ == '__main__':
