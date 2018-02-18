@@ -8,7 +8,7 @@ app = Flask(__name__)
 def homepage():
 	return render_template("homepage.html")
 
-@app.route('/login', methods=['POST','GET'])
+@app.route('/login', methods=['POST'])
 def login():
 	return render_template("login.html")
 
