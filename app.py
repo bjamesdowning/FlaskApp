@@ -8,10 +8,9 @@ app = Flask(__name__)
 def homepage():
 	return render_template("homepage.html")
 
-@app.route('/submit', methods=['POST'])
+@app.route('/Login', methods=['POST'])
 def submit():
-	#return 'You entered: {}'.format(request.form['text'])
-	return "No logon available"
+	return render_tempalte("login.html")
 
 if __name__ == '__main__':
 	app.run()
