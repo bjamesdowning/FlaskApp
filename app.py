@@ -11,7 +11,7 @@ def homepage():
 
 @app.route('/<authors_last_name>')
 def author(authors_last_name):
-	return render_template('authors.html',authors = authors_last_name)
+	return render_template('author.html',author = authors_last_name)
 
 @app.route('/login')
 def login_form():
@@ -23,4 +23,3 @@ def login_auth():
 
 if __name__ == '__main__':
 	app.run()
-
