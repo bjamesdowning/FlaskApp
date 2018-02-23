@@ -9,17 +9,14 @@
     <title>Test</title>
 
   </head>
+  <header>
+      <nav>
+        <a href = "{{ url_for("login") }}"> Login </a>
+        <a href = "{{ url_for("login") }}"> Register</a>
+      </nav>
+    </header>
 
   <body>
-        <h1>Login</h1>
-        <form action="{{ url_for("login") }}" method="post">
-          <dl>
-            <dt>Username:
-            <dd><input type=text name=username>
-            <dt>Password:
-            <dd><input type=password name=password>
-            <dd><input type=submit value=Login>
-          </dl>
-        </form>
+      <h1>Homepage</h1>
   </body>
 </html>

@@ -8,9 +8,13 @@ app = Flask(__name__)
 def homepage():
 	return render_template("homepage.html")
 
-@app.route('/login', methods=['POST'])
-def login():
-	return render_template("login.html")
+@app.route('/login')
+def login_form():
+	return render_template("login_form.html")
+
+@app.route('/login/auth', methods = ["POST"])
+def login_auth():
+	return render_template("login_auth.html")
 
 if __name__ == '__main__':
 	app.run()
