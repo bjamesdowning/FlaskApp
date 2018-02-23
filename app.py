@@ -9,6 +9,10 @@ def homepage():
 	home = "Homepage"
 	return render_template("homepage.html", home=home)
 
+@app.route('/<authors_last_name>')
+def author(authors_last_name):
+	return render_template('authors.html',authors = authors_last_name)
+
 @app.route('/login')
 def login_form():
 	return render_template("login_form.html")

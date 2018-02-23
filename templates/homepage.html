@@ -9,6 +9,8 @@
 </header>
 <body>
     <h1> {{home}} </h1>
+    <h2>Author</h2>
+      <li><a href="{{ url_for(authors_last_name='poe') }}">Edgar Allen Poe</a></li>
     <h3> Notes</h3>
     <form action="/login/auth" method="post">
       <textarea name="message" rows="10" cols="30"></textarea>
