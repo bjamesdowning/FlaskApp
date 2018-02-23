@@ -9,7 +9,7 @@ def homepage():
 	home = "Homepage"
 	return render_template("homepage.html", home=home)
 
-@app.route('author/<authors_last_name>')
+@app.route('/author/<authors_last_name>')
 def author(authors_last_name):
 	return render_template('author.html',author = authors_last_name)
 
