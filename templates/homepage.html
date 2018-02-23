@@ -8,9 +8,17 @@
 	</nav>
 </header>
 <body>
-	<header>
-		<h1> Homepage </h1>
-	</header>
+    <h1> {{homepage}} </h1>
+    <h3> Notes</h3>
+    <form action="/login/auth" method="post">
+      <dl>
+        <dt>Tite:
+        <dd><input type=text name=username>
+        <dt>Content:
+        <textarea rows = "20">Test text</textarea>
+        <dd><input type=submit value=Submit>
+      </dl>
+    </form>
 	<footer>
 		<h6> --Downing </h6>
 	</footer>
