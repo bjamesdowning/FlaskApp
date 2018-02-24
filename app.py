@@ -9,7 +9,7 @@ app = Flask(__name__)
 @app.route('/')
 def homepage():
 	home = "Homepage"
-	return render_template("homepage.html", home=home)
+	return render_template("homepage.html", home=home, key=key, value=value)
 
 @app.route('/author/<authors_last_name>')
 def author(authors_last_name):
@@ -22,6 +22,14 @@ def query(scope):
 		conn.initialize()
 		find = conn.find_one()
 		return render_template('db_results.html',find=find)
+
+@app.route('/insert')
+def insert(key, value)
+	conn.Database()
+	conn.initialize()
+	conn.insert(key, value)
+	return 'Success'
+
 
 @app.route('/login')
 def login_form():

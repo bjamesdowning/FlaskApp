@@ -10,12 +10,10 @@ class Database:
 		print('Connected')
 	
 	
-	def insert(self):
-		key = input("Enter key: ")
-		value =  input("Enter value: ")
+	def insert(self, key, value):
 		data = {key:value}
 		self.collection.insert(data)
-		print('Added', data, 'to mongo')
+		#print('Added', data, 'to mongo')
 
 	def find(self):
 		return [post for post in self.collection.find()]

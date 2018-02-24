@@ -15,8 +15,11 @@
       <!--<li><a href="{{ url_for('query', scope='find') }}">Query All</a></li>-->
       <br>
     <h3> Notes</h3>
-    <form action="/login/auth" method="post">
-      <textarea name="message" rows="10" cols="30"></textarea>
+    <form action="/insert" method="post">
+      <dt>Key:
+      <dd><input type=text name=key>
+      <dt>Value:
+      <dd><input type=text name=value>
       <br>
       <input type="submit">
     </form>
