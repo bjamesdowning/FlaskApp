@@ -21,7 +21,7 @@ def query(scope):
 		conn.Database()
 		conn.initialize()
 		find = conn.find_one()
-		return find
+		return render_template('db_results.html',find=find)
 
 @app.route('/login')
 def login_form():

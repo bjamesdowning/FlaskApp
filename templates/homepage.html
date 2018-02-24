@@ -12,13 +12,16 @@
     <h2>Author</h2>
       <li><a href="{{ url_for('author', authors_last_name='poe') }}">Edgar Allen Poe</a></li>
       <br>
-      <li><a href="{{ url_for('query', scope='find') }}">Query All</a></li>
+      <!--<li><a href="{{ url_for('query', scope='find') }}">Query All</a></li>-->
       <br>
     <h3> Notes</h3>
     <form action="/login/auth" method="post">
       <textarea name="message" rows="10" cols="30"></textarea>
       <br>
       <input type="submit">
+    </form>
+    <form action="{{ url_for('query', scope='find') }}" method='post'>
+      <input type='submit' value='Query All'>
     </form>
 	<footer>
 		<h6> --Downing </h6>
