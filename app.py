@@ -19,7 +19,8 @@ def author(authors_last_name):
 
 @app.route('/query/<scope>')
 def query(scope):
-	return app.homepage.conn.find()
+	if scope == 'find':
+		return conn.find_one()
 
 @app.route('/login')
 def login_form():
