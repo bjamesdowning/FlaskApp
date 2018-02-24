@@ -1,7 +1,7 @@
 #Flask testing
 
 from flask import Flask, request, render_template
-from .dbconnect import Database
+from dbconnect import Database
 import pymongo
 
 app = Flask(__name__)
