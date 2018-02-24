@@ -17,12 +17,15 @@ def author(authors_last_name):
 	return render_template(authors_last_name + '.html')
 
 @app.route('/query/<scope>', methods=["POST"])
-def query(scope):
-	if scope == 'find':
-		conn = Database()
-		conn.initialize()
-		find = conn.find_one()
+def query():
+	conn = Database()
+	conn.initialize()
+	if request.form['find'] == 'Query All':
+		find = conn.find()
 		return render_template('db_results.html',find=find)
+	elif request.form['find'] == 'Query One':
+		find = conn.find_one()
+		return render_template('db_results.html', find=find)
 
 @app.route('/insert', methods=['POST'])
 def insert():
