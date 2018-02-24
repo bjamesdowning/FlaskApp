@@ -1,11 +1,14 @@
 #Flask testing
 
 from flask import Flask, request, render_template
+from .dbconnect import Database
 
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
+	conn = Database()
+	conn.initialize()
 	home = "Homepage"
 	return render_template("homepage.html", home=home)
 
