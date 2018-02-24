@@ -24,7 +24,7 @@ def query(scope):
 		find = conn.find_one()
 		return render_template('db_results.html',find=find)
 
-@app.route('/insert')
+@app.route('/insert', methods=['POST'])
 def insert():
 	key = request.form['key']
 	value = request.form['value']
