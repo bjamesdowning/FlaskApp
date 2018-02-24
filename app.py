@@ -15,7 +15,7 @@ def homepage():
 def author(authors_last_name):
 	return render_template(authors_last_name + '.html')
 
-@app.route('/query/<scope>')
+@app.route('/query/<scope>' methods=["POST"])
 def query(scope):
 	if scope == 'find':
 		conn.Database()
