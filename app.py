@@ -20,10 +20,10 @@ def author(authors_last_name):
 def query(scope):
 	conn = Database()
 	conn.initialize()
-	if scope == 'find'
+	if scope == 'find':
 		find = conn.find()
 		return render_template('db_results.html',find=find)
-	elif scope == 'find_one'
+	elif scope == 'find_one':
 		find = conn.find_one()
 		return render_template('db_results.html', find=find)
 
