@@ -1,15 +1,16 @@
 #Flask testing
 
 from flask import Flask, request, render_template
-from dbconnect import Database
 import pymongo
+from dbconnect import Database
+
 
 app = Flask(__name__)
 
 @app.route('/')
 def homepage():
 	home = "Homepage"
-	return render_template("homepage.html", home=home, key=key, value=value)
+	return render_template("homepage.html", home=home)
 
 @app.route('/author/<authors_last_name>')
 def author(authors_last_name):
@@ -24,7 +25,9 @@ def query(scope):
 		return render_template('db_results.html',find=find)
 
 @app.route('/insert')
-def insert(key, value):
+def insert():
+	key = request.form['key']
+	value = request.form['value']
 	conn.Database()
 	conn.initialize()
 	conn.insert(key, value)
