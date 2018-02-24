@@ -17,13 +17,13 @@ def author(authors_last_name):
 	return render_template(authors_last_name + '.html')
 
 @app.route('/query/<scope>', methods=["POST"])
-def query():
+def query(scope):
 	conn = Database()
 	conn.initialize()
-	if request.form['find']:
+	if scope == 'find'
 		find = conn.find()
 		return render_template('db_results.html',find=find)
-	elif request.form['find_one']:
+	elif scope == 'find_one'
 		find = conn.find_one()
 		return render_template('db_results.html', find=find)
 
