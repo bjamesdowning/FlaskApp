@@ -19,7 +19,7 @@ def author(authors_last_name):
 @app.route('/query/<scope>', methods=["POST"])
 def query(scope):
 	if scope == 'find':
-		conn.Database()
+		conn = Database()
 		conn.initialize()
 		find = conn.find_one()
 		return render_template('db_results.html',find=find)
@@ -28,7 +28,7 @@ def query(scope):
 def insert():
 	key = request.form['key']
 	value = request.form['value']
-	conn.Database()
+	conn = Database()
 	conn.initialize()
 	conn.insert(key, value)
 	return 'Success'
