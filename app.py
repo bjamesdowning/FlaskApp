@@ -8,8 +8,6 @@ app = Flask(__name__)
 
 @app.route('/')
 def homepage():
-	conn = Database()
-	conn.initialize()
 	home = "Homepage"
 	return render_template("homepage.html", home=home)
 
@@ -20,7 +18,10 @@ def author(authors_last_name):
 @app.route('/query/<scope>')
 def query(scope):
 	if scope == 'find':
-		return 'results'
+		conn.Database()
+		conn.initialize()
+		find = conn.find_one()
+		return find
 
 @app.route('/login')
 def login_form():
