@@ -18,7 +18,7 @@ def author(authors_last_name):
 	return render_template(authors_last_name + '.html')
 
 @app.route('/query/<scope>')
-def author(scope):
+def query(scope):
 	return app.homepage.conn.find()
 
 @app.route('/login')
