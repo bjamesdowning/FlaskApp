@@ -24,7 +24,7 @@ def query(scope):
 		return render_template('db_results.html',find=find)
 
 @app.route('/insert')
-def insert(key, value)
+def insert(key, value):
 	conn.Database()
 	conn.initialize()
 	conn.insert(key, value)
