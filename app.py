@@ -20,10 +20,10 @@ def author(authors_last_name):
 def query():
 	conn = Database()
 	conn.initialize()
-	if request.form['find'] == 'Query All':
+	if request.form['find']:
 		find = conn.find()
 		return render_template('db_results.html',find=find)
-	elif request.form['find'] == 'Query One':
+	elif request.form['find_one']:
 		find = conn.find_one()
 		return render_template('db_results.html', find=find)
 
