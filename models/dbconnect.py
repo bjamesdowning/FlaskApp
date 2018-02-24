@@ -1,11 +1,24 @@
-
 import pymongo
 
-
-client = pymongo.MongoClient()
-database = client["testdb"]
-collection = database["testcollection"]
-print('connect')
-
-def mongo_insert(name,student):
+class Database:
 	
+	
+	def initialize(self):
+		self.client = pymongo.MongoClient()
+		self.db = self.client['testdb']
+		self.collection = self.db['testcollection']
+		print('Connected')
+	
+	
+	def insert(self):
+		key = input("Enter key: ")
+		value =  input("Enter value: ")
+		data = {key:value}
+		self.collection.insert(data)
+		print('Added', data, 'to mongo')
+
+	def find(self):
+		return [post for post in self.collection.find()]
+
+	def find_one(self):
+		return self.collection.find_one()
