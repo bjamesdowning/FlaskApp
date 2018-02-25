@@ -3,6 +3,7 @@
 from flask import Flask, request, render_template
 import pymongo
 from dbconnect import Database
+import json
 
 
 app = Flask(__name__)
@@ -21,10 +22,10 @@ def query(scope):
 	conn = Database()
 	conn.initialize()
 	if scope == 'find':
-		find = conn.find()
+		find = json.dumps(conn.find())
 		return render_template('db_results.html',find=find)
 	elif scope == 'find_one':
-		find = conn.find_one()
+		find = json.dumps(conn.find_one())
 		return render_template('db_results.html', find=find)
 
 @app.route('/insert', methods=['POST'])
