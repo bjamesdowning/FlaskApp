@@ -22,10 +22,12 @@ def query(scope):
 	conn = Database()
 	conn.initialize()
 	if scope == 'find':
-		find = json.dumps(conn.find())
+		raw = conn.find()
+		find = json.dumps(raw)
 		return render_template('db_results.html',find=find)
 	elif scope == 'find_one':
-		find = json.dumps(conn.find_one())
+		raw = conn.find_one()
+		find = json.dumps(raw)
 		return render_template('db_results.html', find=find)
 
 @app.route('/insert', methods=['POST'])
