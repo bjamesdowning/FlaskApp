@@ -23,7 +23,7 @@ def query(scope):
 	conn.initialize()
 	if scope == 'find':
 		raw = conn.find()
-		find = json.dumps(raw)
+		find = json.dumps(raw) #try a for loop with jinja in html template
 		return render_template('db_results.html',find=find)
 	elif scope == 'find_one':
 		raw = conn.find_one()
