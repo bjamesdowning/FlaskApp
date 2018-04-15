@@ -9,7 +9,7 @@ class Database:
 		self.collection = self.db['testcollection']
 		print('Connected')
 	
-	
+
 	def insert(self, key, value):
 		data = {key:value}
 		self.collection.insert(data)
